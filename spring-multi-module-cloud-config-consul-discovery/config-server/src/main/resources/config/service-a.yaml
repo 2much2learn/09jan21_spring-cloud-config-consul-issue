@@ -9,6 +9,12 @@ spring:
         instanceId: "${spring.application.name}-${server.port}-${spring.cloud.client.ip-address}"
         prefer-ip-address: true
         health-check-critical-timeout: "1m"
+
+serviceb:
+  url: http://service-b
+
+servicec:
+  url: http://service-c
 ---
 
 spring:
