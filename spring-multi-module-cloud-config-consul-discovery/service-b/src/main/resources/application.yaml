@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: service-b
+
+# Set config.import - https://docs.spring.io/spring-cloud-config/docs/3.0.0/reference/html/#config-data-import
+  config:
+    import: "optional:configserver:"

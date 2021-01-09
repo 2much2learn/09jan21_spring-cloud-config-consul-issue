@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: service-a
+
+  profiles:
+    active: dev
+
+  cloud:
+    config:
+      fail-fast: true
+      profile: dev
+      discovery:
+        enabled: true
+        serviceId: config-server

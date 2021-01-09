@@ -1,0 +1,21 @@
+serviceb:
+  url: http://localhost:8082
+
+servicec:
+  url: http://localhost:8083
+
+---
+
+spring:
+  profiles: dev
+
+server:
+  port : 8081
+
+---
+
+spring:
+  profiles: prod
+
+server:
+  port : 8080

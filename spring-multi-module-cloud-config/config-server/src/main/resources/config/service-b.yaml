@@ -1,0 +1,21 @@
+---
+
+spring:
+  profiles: dev
+
+server:
+  port : 8082
+
+service:
+  name: Service B - Dev
+
+---
+
+spring:
+  profiles: prod
+
+server:
+  port : 8080
+
+service:
+  name: Service B - Prod

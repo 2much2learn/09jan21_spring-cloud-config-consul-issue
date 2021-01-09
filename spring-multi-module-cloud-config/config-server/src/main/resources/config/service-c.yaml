@@ -1,0 +1,21 @@
+---
+
+spring:
+  profiles: dev
+
+server:
+  port : 8083
+
+service:
+  name: Service C - Dev
+
+---
+
+spring:
+  profiles: prod
+
+server:
+  port : 8080
+
+service:
+  name: Service C - Prod

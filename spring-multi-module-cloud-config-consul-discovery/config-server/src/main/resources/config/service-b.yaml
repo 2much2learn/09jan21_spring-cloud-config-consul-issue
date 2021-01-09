@@ -1,0 +1,32 @@
+spring:
+  application:
+    name: service-b
+
+  cloud:
+    consul:
+      host: 127.0.0.1
+      discovery:        
+        instanceId: "${spring.application.name}-${server.port}-${spring.cloud.client.ip-address}"
+        prefer-ip-address: true
+        health-check-critical-timeout: "1m"
+---
+
+spring:
+  profiles: dev
+
+server:
+  port : 8082
+
+service:
+  name: Service B - Dev
+
+---
+
+spring:
+  profiles: prod
+
+server:
+  port : 8080
+
+service:
+  name: Service B - Prod
