@@ -3,7 +3,7 @@ version: '3.9'
 # Define services
 services:
 
-  # Service A
+  # Consul
   consul-server:
     image: consul
     ports:
@@ -14,9 +14,23 @@ services:
     networks:
       - backend
 
+  # Config Server
+  config-server:
+    image: narramadan/spring-multi-module-consul-config-config-server
+    restart: always
+    ports:
+      - 8888:8888
+    links:
+      - consul-server
+    environment:
+      - spring.profiles.active=native
+      - spring.cloud.consul.host=consul-server
+    networks:
+      - backend
+
   # Service A
   service-a:
-    image: narramadan/spring-multi-module-consul-service-a
+    image: narramadan/spring-multi-module-consul-config-service-a
     restart: always
     ports:
       - 8080:8080
@@ -30,19 +44,20 @@ services:
 
   # Service B - 1
   service-b-1:
-    image: narramadan/spring-multi-module-consul-service-b
+    image: narramadan/spring-multi-module-consul-config-service-b
     restart: always
     links:
       - consul-server
+      - config-server
     environment:
       - spring.profiles.active=prod
       - spring.cloud.consul.host=consul-server
     networks: 
       - backend
 
-  # Service B - 2
+  # # Service B - 2
   service-b-2:
-    image: narramadan/spring-multi-module-consul-service-b
+    image: narramadan/spring-multi-module-consul-config-service-b
     restart: always
     links:
       - consul-server
@@ -52,9 +67,9 @@ services:
     networks: 
       - backend
 
-  # Service C - 1
+  # # Service C - 1
   service-c-1:
-    image: narramadan/spring-multi-module-consul-service-c
+    image: narramadan/spring-multi-module-consul-config-service-c
     restart: always
     links:
       - consul-server
@@ -64,9 +79,9 @@ services:
     networks:
       - backend
 
-  # Service C - 2
+  # # Service C - 2
   service-c-2:
-    image: narramadan/spring-multi-module-consul-service-c
+    image: narramadan/spring-multi-module-consul-config-service-c
     restart: always
     links:
       - consul-server

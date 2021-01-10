@@ -8,7 +8,6 @@ spring:
   cloud:
     config:
       fail-fast: true
-      profile: dev
       discovery:
         enabled: true
         serviceId: config-server

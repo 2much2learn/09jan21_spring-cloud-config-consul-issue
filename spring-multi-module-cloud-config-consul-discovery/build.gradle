@@ -37,7 +37,9 @@ subprojects {
 		implementation 'org.yaml:snakeyaml:1.27'
 		implementation 'org.springframework.boot:spring-boot-starter-actuator'
 		implementation 'org.springframework.boot:spring-boot-starter-web'
-		implementation 'org.springframework.boot:spring-cloud-starter-consul-all'
+		implementation 'org.springframework.cloud:spring-cloud-starter-bootstrap'
+		implementation 'org.springframework.cloud:spring-cloud-starter-config'
+		implementation 'org.springframework.cloud:spring-cloud-starter-consul-all'
 		developmentOnly 'org.springframework.boot:spring-boot-devtools'
 		testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	}

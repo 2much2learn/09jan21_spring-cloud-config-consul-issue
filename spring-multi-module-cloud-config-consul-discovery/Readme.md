@@ -57,7 +57,7 @@ $ docker logs consul-server
 * Start Config Server and verify if service-a config can be accessed
 
 ```
-$ java -jar config-server\target\config-server-a-0.0.1-SNAPSHOT.jar
+$ java -jar -Dspring.profiles.active=native config-server\target\config-server-0.0.1-SNAPSHOT.jar
 
 $ curl http://localhost:8888/service-a/dev
 $ curl http://localhost:8888/service-a/prod
@@ -87,11 +87,13 @@ $ curl http://localhost:8081/greeting
 
 * Run a docker image
 ```
-$ docker run -d -p 8081:8080 -e spring.profiles.active=prod -e spring.cloud.consul.host=<HOST_IP> narramadan/spring-multi-module-consul-service-a
+$ docker run -d -p 8888:8888 -e spring.profiles.active=native narramadan/spring-multi-module-consul-config-server
 
-$ docker run -d -p 8082:8080 -e spring.profiles.active=prod narramadan/spring-multi-module-consul-service-b
+$ docker run -d -p 8081:8080 -e spring.profiles.active=prod narramadan/spring-multi-module-consul-config-service-a
 
-$ docker run -d -p 8083:8080 -e spring.profiles.active=prod narramadan/spring-multi-module-consul-service-c
+$ docker run -d -p 8082:8080 -e spring.profiles.active=prod narramadan/spring-multi-module-consul-config-service-b
+
+$ docker run -d -p 8083:8080 -e spring.profiles.active=prod narramadan/spring-multi-module-consul-config-service-c
 ```
 
 * List containers currently running

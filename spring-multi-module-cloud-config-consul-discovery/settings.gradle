@@ -1,5 +1,6 @@
-rootProject.name = 'spring-multi-module-consul'
+rootProject.name = 'spring-multi-module-consul-config'
 
+include 'config-server'
 include 'service-a'
 include 'service-b'
 include 'service-c'
