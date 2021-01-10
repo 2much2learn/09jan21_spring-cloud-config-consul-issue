@@ -11,4 +11,4 @@ spring:
         health-check-critical-timeout: "1m"
 
 server:
-  port : 8888
+  port : 8800
