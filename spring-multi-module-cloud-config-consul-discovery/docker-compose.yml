@@ -19,7 +19,7 @@ services:
     image: narramadan/spring-multi-module-consul-config-config-server
     restart: always
     ports:
-      - 8888:8888
+      - 8800:8800
     links:
       - consul-server
     environment:

@@ -3,9 +3,9 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.toomuch2learn.microservices</groupId>
-	<artifactId>spring-multi-module-cloud-config</artifactId>
+	<artifactId>spring-multi-module-consul-config</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>spring-multi-module-cloud-config</name>
+	<name>spring-multi-module-consul-config</name>
 	<description>Spring multi module cloud config</description>
     <packaging>pom</packaging>
 

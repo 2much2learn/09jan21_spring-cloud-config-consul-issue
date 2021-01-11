@@ -87,7 +87,7 @@ $ curl http://localhost:8081/greeting
 
 * Run a docker image
 ```
-$ docker run -d -p 8888:8888 -e spring.profiles.active=native narramadan/spring-multi-module-consul-config-server
+$ docker run -d -p 8888:8888 -e spring.profiles.active=native -e spring.cloud.consul.host=0.0.0.0 --name config-server --link consul-server:consul-server narramadan/spring-multi-module-consul-config-config-server
 
 $ docker run -d -p 8081:8080 -e spring.profiles.active=prod narramadan/spring-multi-module-consul-config-service-a
 

@@ -11,3 +11,7 @@ spring:
       discovery:
         enabled: true
         serviceId: config-server
+
+    consul:
+      discovery:        
+        instanceId: "${spring.application.name}-${server.port}-${spring.cloud.client.ip-address}"

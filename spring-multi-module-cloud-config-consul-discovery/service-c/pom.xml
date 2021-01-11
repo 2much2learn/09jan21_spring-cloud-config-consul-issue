@@ -5,7 +5,7 @@
 	
 	<parent>
 		<groupId>com.toomuch2learn.microservices</groupId>
-		<artifactId>spring-multi-module-cloud-config</artifactId>
+		<artifactId>spring-multi-module-consul-config</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 	
