@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: app
-          image: narramadan/spring-multi-module-consul-service-a
+          image: narramadan/spring-multi-module-consul-config-service-a
           ports:
             - containerPort: 8080
           imagePullPolicy: Always

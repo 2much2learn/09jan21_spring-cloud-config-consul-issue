@@ -156,7 +156,10 @@ $  docker tag ffc5ec760103 narramadan/springboot-servicea
 ```
 $ docker push <Docker_Username>/<IMAGE_NAME>
 
-$ docker push narramadan/spring-multi-module-consul-service-a
+$ docker push narramadan/spring-multi-module-consul-config-config-server
+$ docker push narramadan/spring-multi-module-consul-config-service-a
+$ docker push narramadan/spring-multi-module-consul-config-service-b
+$ docker push narramadan/spring-multi-module-consul-config-service-c
 ```
 
 ### Deploy to Kubernetes

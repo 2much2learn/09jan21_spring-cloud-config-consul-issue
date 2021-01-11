@@ -1,37 +1,37 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: springboot-service-c
+  name: springboot-config-server
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: springboot-service-c
+      app: springboot-config-server
   template:
     metadata:
       labels:
-        app: springboot-service-c
+        app: springboot-config-server
     spec:
       containers:
         - name: app
-          image: narramadan/spring-multi-module-consul-config-service-c
+          image: narramadan/spring-multi-module-consul-config-config-server
           ports:
-            - containerPort: 8080
+            - containerPort: 8800
           imagePullPolicy: Always
           env:
             - name: spring.profiles.active
-              value: "prod"
+              value: "native"
             - name: spring.cloud.consul.host
               value: "$(CONSUL_SERVER_SVC_SERVICE_HOST)"
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: springboot-service-c-svc
+  name: springboot-config-server-svc
 spec:
   selector:
-    app: springboot-service-c
+    app: springboot-config-server
   ports:
-    - port: 8080
-      targetPort: 8080
+    - port: 8800
+      targetPort: 8800
   type: LoadBalancer
