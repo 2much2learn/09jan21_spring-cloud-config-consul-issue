@@ -57,7 +57,11 @@ $ docker logs consul-server
 * Start Config Server and verify if service-a config can be accessed
 
 ```
+# Native profile - loading config files from classpath
 $ java -jar -Dspring.profiles.active=native config-server\target\config-server-0.0.1-SNAPSHOT.jar
+
+# Git profile - loading config files from git repo
+$ java -jar -Dspring.profiles.active=git config-server\target\config-server-0.0.1-SNAPSHOT.jar
 
 $ curl http://localhost:8888/service-a/dev
 $ curl http://localhost:8888/service-a/prod

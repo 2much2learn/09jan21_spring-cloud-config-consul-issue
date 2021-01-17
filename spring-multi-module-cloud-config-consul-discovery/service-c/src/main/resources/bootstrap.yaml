@@ -8,6 +8,7 @@ spring:
   cloud:
     config:
       fail-fast: true
+      name: common, ${spring.application.name}      
       discovery:
         enabled: true
         serviceId: config-server
