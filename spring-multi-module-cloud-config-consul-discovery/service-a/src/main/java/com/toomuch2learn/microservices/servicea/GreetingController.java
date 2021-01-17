@@ -3,9 +3,11 @@ package com.toomuch2learn.microservices.servicea;
 import java.util.concurrent.atomic.AtomicLong;
 
 import com.toomuch2learn.microservices.servicea.client.ServiceBClient;
-
 import com.toomuch2learn.microservices.servicea.client.ServiceCClient;
+
 import com.toomuch2learn.microservices.servicea.model.Greeting;
+
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -13,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class GreetingController {
 
-	private static final String template = "Service-A - Hello, %s! - %s - %s";
+	private static final String template = "Service-A - Hello - %s - %s";
 	private final AtomicLong counter = new AtomicLong();
 
 	@Value("${common.message}")
@@ -27,11 +29,11 @@ public class GreetingController {
 
 	@GetMapping("/greeting")
 	public Greeting greeting() {
-		System.out.println(String.format("===> %s %s", commonMessage, serviceName));
+		System.out.println(String.format("===> %s - %s", commonMessage, "Service A"));
 
 		return new Greeting(
 			counter.incrementAndGet(),
-			String.format(template, name, getGreetingsFromFromServiceB(), getGreetingsFromFromServiceC()));
+			String.format(template, getGreetingsFromFromServiceB(), getGreetingsFromFromServiceC()));
 	}
 
 	private String getGreetingsFromFromServiceB() {
