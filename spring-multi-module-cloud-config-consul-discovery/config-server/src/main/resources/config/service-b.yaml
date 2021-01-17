@@ -1,3 +1,9 @@
+service:
+  # Symmetric Key
+  #secret: '{cipher}e9b39ba2be6350fff61d5aac226cf3285d1198f18f065256eabf1d749cee6695fdf7487c932481d039f245840124459a'
+  # Asymmetric key
+  secret: '{cipher}AQBnIHxvrOENxCo5VAqwJnUaFRG4jR/csZWBQ7VtGS4jB00AGYbAJa+aPm7OvmIiYkPIjzAsaPK6XlMTlyvuw+3/ckCAvJ3EJNsspU9QJMNj1c4Hp5+PY0t0N5Zo4p9RTYNOYssz0B1sNgmZs5wPleabve6mdUU89BennWUmBZR9Uh0ib/SgB18kLwrQ3170ZiGmC775aW9vXe5QcehGOMuoHf9gxrq0fzN2nwSff671xFMn/N6cP2UWazaM2STDX3R4530vPzwPI37KTSyOUziZYx1/d43XuSydYKhoOlmqztvbM3W54zyjfTBUPiOBQcBT+wY1G7/hyxHz09zfReUXPR4toFrTswOcZUG1YGCMCCLNjaQMj8hI1Sq0oTd3ztQjLOzaszmv3fWhstfBfAbz'
+
 ---
 
 spring:

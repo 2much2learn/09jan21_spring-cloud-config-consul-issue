@@ -13,12 +13,15 @@ public class GreetingController {
 	@Value("${service.name}")
 	private String serviceName;
 
+	@Value("${service.secret}")
+	private String secretMessage;
+
 	private static final String template = "Service-C - Hello, %s!";
 	private final AtomicLong counter = new AtomicLong();
 
 	@GetMapping("/greeting")
 	public Greeting greeting(@RequestParam(value = "name", defaultValue = "World") String name) {
-		return new Greeting(counter.incrementAndGet(), String.format(template, serviceName));
+		return new Greeting(counter.incrementAndGet(), String.format(template, String.format("%s - %s", serviceName, secretMessage)));
 	}
 }
 

@@ -63,6 +63,23 @@ $ curl http://localhost:8888/service-a/dev
 $ curl http://localhost:8888/service-a/prod
 ```
 
+* Encrypt & Decrypt messages
+```
+$ curl http://localhost:8800/encrypt --data-urlencode "Secret message from - service B"
+$ curl http://localhost:8800/decrypt -d <ENCRYPTED_STRING>
+
+# Verify service.secret being decrypted before serving it to service-b
+$ curl http://localhost:8888/service-b/dev
+```
+
+** Asymmetric key generation
+*** Generate key
+```
+$ keytool -genkeypair -alias 2much2learnkey -keyalg RSA -dname "CN=2much2learn,OU=Unit,O=2much2learn,L=Melbourne,S=Victoria,C=AUS" -keypass 2much2learn -keystore 2much2learn.jks -storepass 2much2learn
+```
+*** Copy jks file to config-server src\resources folder
+*** Configure bootstrap.yaml with encrypt.keyStore.* properties inline to what is used when generating key
+
 * Start Spring boot service
 
 ```
@@ -87,7 +104,7 @@ $ curl http://localhost:8081/greeting
 
 * Run a docker image
 ```
-$ docker run -d -p 8888:8888 -e spring.profiles.active=native -e spring.cloud.consul.host=0.0.0.0 --name config-server --link consul-server:consul-server narramadan/spring-multi-module-consul-config-config-server
+$ docker run -d -p 8800:8800 -e spring.profiles.active=native -e spring.cloud.consul.host=0.0.0.0 --name config-server --link consul-server:consul-server narramadan/spring-multi-module-consul-config-config-server
 
 $ docker run -d -p 8081:8080 -e spring.profiles.active=prod narramadan/spring-multi-module-consul-config-service-a
 

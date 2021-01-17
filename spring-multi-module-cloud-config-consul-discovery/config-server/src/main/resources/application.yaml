@@ -1,8 +1,12 @@
 spring:
-  application:
-    name: config-server
 
   cloud:
+
+    config:
+      server: 
+        encrypt:
+          enabled: true
+
     consul:
       host: 127.0.0.1
       discovery:        

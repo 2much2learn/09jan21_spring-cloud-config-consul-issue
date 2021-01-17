@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: config-server
+
+### Symmetric Key
+#encrypt:
+#  key: 2much2learn
+
+### Asymmetric Key
+encrypt:
+  keyStore:
+    location: classpath:/2much2learn.jks
+    password: 2much2learn
+    alias: 2much2learnkey
+    secret: 2much2learn
