@@ -1,4 +1,4 @@
-# Service Registration and Discovery in Spring Boot Microservices with Spring Cloud Consul
+# Externalized Configuration with Discovery First approach in Spring Boot Microservices with Spring Cloud Config & Spring Cloud Consul
 
 ### Maven
 
@@ -63,8 +63,8 @@ $ java -jar -Dspring.profiles.active=native config-server\target\config-server-0
 # Git profile - loading config files from git repo
 $ java -jar -Dspring.profiles.active=git config-server\target\config-server-0.0.1-SNAPSHOT.jar
 
-$ curl http://localhost:8888/service-a/dev
-$ curl http://localhost:8888/service-a/prod
+$ curl http://localhost:8800/service-a/dev
+$ curl http://localhost:8800/service-a/prod
 ```
 
 * Encrypt & Decrypt messages
@@ -73,7 +73,7 @@ $ curl http://localhost:8800/encrypt --data-urlencode "Secret message from - ser
 $ curl http://localhost:8800/decrypt -d <ENCRYPTED_STRING>
 
 # Verify service.secret being decrypted before serving it to service-b
-$ curl http://localhost:8888/service-b/dev
+$ curl http://localhost:8800/service-b/dev
 ```
 
 ** Asymmetric key generation
@@ -210,7 +210,9 @@ $ kubectl get pods -l app=springboot-service-a --watch
 ```
 
 * Scale deployment up/down by setting replicas
-```$ kubectl scale --replicas=2 deployment/springboot-service-a```
+```$ kubectl scale --replicas=2 deployment/springboot-service-b```
+
+```$ kubectl scale --replicas=2 deployment/springboot-service-c```
 
 * Get Environment Variables set to the pod
 ```$ kubectl exec <POD_NAME> -- printenv | grep SERVICE```
@@ -237,6 +239,8 @@ $ kubectl logs -f <POD_NAME>
 * Spring Cloud Consul - Common Application properties - https://cloud.spring.io/spring-cloud-consul/reference/html/appendix.html#common-application-properties
 
 * Registering unique instanceId - https://programmer.ink/think/use-consul-to-implement-service-discovery-instance-id-customization-3-ways.html
+
+* Spring Cloud Config Reference - https://docs.spring.io/spring-cloud-config/docs/current/reference/html/
 
 * https://piotrminkowski.com/2019/11/06/microservices-with-spring-boot-spring-cloud-gateway-and-consul-cluster/
 

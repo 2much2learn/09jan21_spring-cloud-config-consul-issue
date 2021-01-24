@@ -23,7 +23,8 @@ services:
     links:
       - consul-server
     environment:
-      - spring.profiles.active=native
+      #- spring.profiles.active=native
+      - spring.profiles.active=git
       - spring.cloud.consul.host=consul-server
     networks:
       - backend

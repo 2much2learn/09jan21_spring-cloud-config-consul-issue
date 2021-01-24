@@ -20,7 +20,8 @@ spec:
           imagePullPolicy: Always
           env:
             - name: spring.profiles.active
-              value: "native"
+              #value: "native"
+              value: "git"
             - name: spring.cloud.consul.host
               value: "$(CONSUL_SERVER_SVC_SERVICE_HOST)"
 ---
