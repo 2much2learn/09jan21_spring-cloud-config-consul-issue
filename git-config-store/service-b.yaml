@@ -13,15 +13,17 @@ server:
   port : 8082
 
 service:
-  name: Service B - Dev
+  name: Service B - Dev refresh
 
 ---
 
 spring:
+  A
   profiles: prod
 
 server:
   port : 8080
 
 service:
+  B
   name: Service B - Prod
