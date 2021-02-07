@@ -101,6 +101,11 @@ $ java -jar service-a\target\service-a-0.0.1-SNAPSHOT.jar
 $ curl http://localhost:8081/greeting
 ```
 
+* Refresh service to reload configurations if there is change in props
+```
+$ curl -H "Content-Type: application/json" -d {} http://localhost:8081/actuator/refresh
+```
+
 ### Docker
 
 * List Docker images

@@ -1,0 +1,9 @@
+spring:
+  profiles: git
+
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/2much2learn/article_2021_jan_spring-cloud-config-configfirst_discoveryfirst
+          search-paths: git-config-store

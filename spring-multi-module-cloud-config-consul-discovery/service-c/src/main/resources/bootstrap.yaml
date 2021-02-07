@@ -8,7 +8,7 @@ spring:
   cloud:
     config:
       fail-fast: true
-      name: common, ${spring.application.name}      
+      name: common, ${spring.application.name}
       discovery:
         enabled: true
         serviceId: config-server
@@ -16,6 +16,8 @@ spring:
     consul:
       host: 127.0.0.1
       discovery:
-        instanceId: "${spring.application.name}-${server.port}-${spring.cloud.client.ip-address}"
+        instanceId: "${spring.application.name}-${spring.cloud.client.ip-address}"
         prefer-ip-address: true
         health-check-critical-timeout: "1m"
+      #binder:
+      #  enabled: false

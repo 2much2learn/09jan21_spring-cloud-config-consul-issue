@@ -2,3 +2,21 @@
 spring:
   config:
     import: optional:configserver:http://localhost:8888
+
+  cloud:
+    config:
+      fail-fast: true
+      name: common, ${spring.application.name}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh, beans, env
+
+---
+spring:
+  profiles: dev
+
+server:
+  port : 8081
