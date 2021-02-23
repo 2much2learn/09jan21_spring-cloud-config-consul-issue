@@ -7,7 +7,9 @@ service:
 ---
 
 spring:
-  profiles: dev
+  config:
+    activate:
+      on-profile: dev
 
 service:
   name: Service B - Dev refresh
@@ -15,7 +17,9 @@ service:
 ---
 
 spring:
-  profiles: prod
+  config:
+    activate:
+      on-profile: prod
 
 service:
   name: Service B - Prod
