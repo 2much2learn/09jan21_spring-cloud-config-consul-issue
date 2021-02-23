@@ -5,17 +5,19 @@ service:
   secret: '{cipher}AQCyFLG0wtUvbOyQ/SoGxZieiIs37S68S8WuNFMuJRw70Mt0RE5wp3TIrLXHz+cLlpNH1J0lijBUuhD+WlgCQ25a8P4SOcLB4QJdjIceChfcd6Ncno6HnjAz0jr0mdVIJ7lR94AyH4ddrUoUdQNWab3NKpRYRFL32dD5V3oy1YDDIhN1M0fZFqupdUcDGpmiGnywEIux93hn6R+2QAGmwiyxTa9nm0Y+D5zq8U1u/IFucJJA8q0oLPVCoCzAgfbzAPwUhJyORFAyz34edgboJ3okD9ULcbX/7IpCe3bV8h5yHqzPFbbTb44h1yXiw/joAi8nijgHYhtNkBez93LaLXf2zcfzmnTjPwTiE5Z0eNVfSVWNMHhh9IvV7CN9RRRcK0CtreprEx468PHqJiUllMRJ'
 
 ---
-
 spring:
-  profiles: dev
+  config:
+    activate:
+      on-profile: dev
 
 service:
   name: Service C - Dev
 
 ---
-
 spring:
-  profiles: prod
+  config:
+    activate:
+      on-profile: prod
 
 service:
   name: Service C - Prod
