@@ -12,7 +12,7 @@ spring:
       on-profile: dev
 
 service:
-  name: Service B - Dev refresh
+  name: Service B - Dev
 
 ---
 
