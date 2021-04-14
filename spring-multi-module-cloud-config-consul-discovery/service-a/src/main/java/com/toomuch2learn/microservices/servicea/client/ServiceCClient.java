@@ -5,7 +5,7 @@ import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-@FeignClient(name = "servicec", url = "${servicec.url}")
+//@FeignClient(name = "servicec", url = "${servicec.url}")
 public interface ServiceCClient {
 
     @RequestMapping(method = RequestMethod.GET, value = "/greeting")

@@ -24,7 +24,7 @@ public class GreetingController {
 	@Autowired
 	private ServiceBClient serviceBClient;
 
-	@Autowired
+	//@Autowired
 	private ServiceCClient serviceCClient;
 
 	@GetMapping("/greeting")
@@ -43,8 +43,9 @@ public class GreetingController {
 	}
 
 	private String getGreetingsFromFromServiceC() {
-		Greeting greeting = serviceCClient.getGreetingMessage();
+		//Greeting greeting = serviceCClient.getGreetingMessage();
 
-		return greeting != null ? greeting.getContent() + " - " + greeting.getId() : "Service C Not Available";
+		//return greeting != null ? greeting.getContent() + " - " + greeting.getId() : "Service C Not Available";
+		return "";
 	}
 }
